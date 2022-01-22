@@ -1,4 +1,4 @@
-package com.poker.cardsservice.model;
+package com.poker.cardsservice.model.domain;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
@@ -28,7 +28,7 @@ public class Deck {
         List<Card> cardsList = new ArrayList<>(cards);
         Collections.shuffle(cardsList);
         return Tuple.of(
-                Set.copyOf(cardsList.subList(0, count)),
+                new HashSet<>(cardsList.subList(0, count)),
                 new Deck(Set.copyOf(cardsList.subList(count, cardsList.size())))
         );
     }
