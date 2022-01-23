@@ -27,5 +27,10 @@ class DealServiceTest {
                 .map(Deal::getCardsOnSlot)
                 .orElse(Set.of())
                 .size());
+
+        assertEquals(5, optionalDeal
+                .map(Deal::getTableCards)
+                .orElse(Set.of())
+                .size());
     }
 }

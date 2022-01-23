@@ -48,6 +48,7 @@ public class DealService {
 
         dealRepo.save(Deal.builder()
                 .dealId(dealId)
+                .tableCards(tableCards)
                 .cardsOnSlot(slotsCards)
                 .build());
 

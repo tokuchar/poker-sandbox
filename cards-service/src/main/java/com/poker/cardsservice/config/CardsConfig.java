@@ -1,6 +1,5 @@
 package com.poker.cardsservice.config;
 
-import com.poker.cardsservice.api.CardsApi;
 import com.poker.cardsservice.repo.DealRepo;
 import com.poker.cardsservice.service.DealService;
 import io.vavr.jackson.datatype.VavrModule;
@@ -49,11 +48,6 @@ public class CardsConfig {
     @Bean
     DealService dealService(DealRepo dealRepo) {
         return new DealService(dealRepo);
-    }
-
-    @Bean
-    CardsApi cardsApi(DealService dealService){
-        return new CardsApi(dealService);
     }
 
     @Bean
